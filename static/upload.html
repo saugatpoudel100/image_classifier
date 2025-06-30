@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animal Classifier</title>
+  <script>
+    async function uploadImage(event) {
+      event.preventDefault();
+      const formData = new FormData();
+      const fileField = document.querySelector("input[type='file']");
+      formData.append("file", fileField.files[0]);
+
+      const response = await fetch("http://127.0.0.1:8000/predict", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+      document.getElementById("result").innerText = "Predicted Animal: " + result.prediction;
+    }
+  </script>
+</head>
+<body>
+  <h2>Animal Image Classifier</h2>
+  <form onsubmit="uploadImage(event)">
+    <input type="file" accept="image/*" required><br>
+    <button type="submit">Upload & Predict</button>
+  </form>
+  <h3 id="result"></h3>
+</body>
+</html>
