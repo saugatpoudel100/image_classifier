@@ -5,9 +5,7 @@ A deep learning-based image classification project that detects animal classes (
 ---
 
 ## 📁 Project Structure
-
-image_classifier/
-│
+  image_classifier/
 ├── app/
 │ └── model/
 │ ├── cnn_animal_model.h5 # Trained CNN model
@@ -26,8 +24,6 @@ image_classifier/
 ├── main.py # FastAPI server for prediction and training
 ├── requirements.txt # Python dependencies
 └── README.md # Documentation
-
----
 
 ## 🚀 Features
 
@@ -48,9 +44,6 @@ image_classifier/
 git clone https://github.com/saugatpoudel100/image_classifier.git
 cd image_classifier
 Create and activate a virtual environment
-
-bash
-Copy code
 python -m venv venv
 venv\Scripts\activate       # Windows
 source venv/bin/activate    # macOS/Linux
