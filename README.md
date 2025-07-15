@@ -5,6 +5,7 @@ A deep learning-based image classification project that detects animal classes (
 ---
 
 ## 📁 Project Structure
+```bash
   image_classifier/
 ├── app/
 │ └── model/
@@ -24,7 +25,8 @@ A deep learning-based image classification project that detects animal classes (
 ├── main.py # FastAPI server for prediction and training
 ├── requirements.txt # Python dependencies
 └── README.md # Documentation
-
+```
+---
 ## 🚀 Features
 
 - 🧠 Trains a CNN using TensorFlow/Keras
@@ -43,36 +45,46 @@ A deep learning-based image classification project that detects animal classes (
 ```bash
 git clone https://github.com/saugatpoudel100/image_classifier.git
 cd image_classifier
+```
+
 Create and activate a virtual environment
+```bash
 python -m venv venv
 venv\Scripts\activate       # Windows
 source venv/bin/activate    # macOS/Linux
+```
+
 Install dependencies
 
-
+```bash
 pip install -r requirements.txt
+```
 Prepare the dataset
 
 Organize your dataset as:
+```bash
 
-swift
-Copy code
 dataset/Animals/
 ├── cats/
 ├── dogs/
 └── snakes/
+```
 Add JPG/PNG images in respective folders.
 
-Train the model
+## Train the model
+```bash
 python train_cnn_model.py
+```
 Run the server
+```bash
 uvicorn main:app --reload
+```
 Access the Web Interface
 
 Open browser:
 http://127.0.0.1:8000
 
-🧪 API Endpoints
+## 🧪 API Endpoints
 GET /
 → HTML form for image upload
 
@@ -87,7 +99,9 @@ file: image file
 
 label: category (must match existing or create new folder)
 
-📈 Model Details
+---
+
+## 📈 Model Details
 CNN Layers:
 
 Conv2D → MaxPooling → Conv2D → MaxPooling → Flatten → Dense → Dropout → Output
@@ -98,7 +112,9 @@ Optimizer: Adam
 
 Loss: Categorical Crossentropy
 
-🧾 Requirements
+---
+
+## 🧾 Requirements
 See requirements.txt.
 Main libraries:
 
@@ -114,17 +130,20 @@ uvicorn
 
 joblib
 
-📷 Sample Result
-json
-Copy code
+---
+## 📷 Sample Result
+json:
+```bash
 POST /predict
 {
   "prediction": "cats"
 }
-🤝 Contributing
+```
+---
+## 🤝 Contributing
 Feel free to fork and submit PRs for improvements, bug fixes, or new features!
-
-📄 License
+ ---
+## 📄 License
 MIT License. See LICENSE for details.
 
 
